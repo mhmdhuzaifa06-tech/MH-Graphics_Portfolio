@@ -1,1446 +1,2079 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Muhammad Huzaifa | Graphic Designer & Accountant</title>
-
-<meta name="description" content="Muhammad Huzaifa — Graphic Designer, Accounting & Finance Student and Founder of MH Graphics. Creative Design • Financial Precision • Digital Solutions.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================
-   RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background: #050505;
-    color: #ffffff;
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-/* =========================
-   LIQUID BACKGROUND
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    top: -220px;
-    left: -180px;
-    background: radial-gradient(
-        circle,
-        rgba(255, 0, 30, 0.24),
-        transparent 70%
-    );
-    filter: blur(50px);
-    animation: liquidMove 12s ease-in-out infinite alternate;
-    z-index: -3;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 650px;
-    height: 650px;
-    right: -250px;
-    bottom: -250px;
-    background: radial-gradient(
-        circle,
-        rgba(255, 20, 50, 0.18),
-        transparent 70%
-    );
-    filter: blur(60px);
-    animation: liquidMove2 15s ease-in-out infinite alternate;
-    z-index: -3;
-}
-
-@keyframes liquidMove {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(180px, 100px) scale(1.15);
-    }
-
-    100% {
-        transform: translate(80px, 220px) scale(0.9);
-    }
-}
-
-@keyframes liquidMove2 {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate(-150px, -100px) scale(1.2);
-    }
-
-    100% {
-        transform: translate(-80px, -180px) scale(0.9);
-    }
-}
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    position: fixed;
-    top: 18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(1200px, calc(100% - 30px));
-    padding: 12px 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: rgba(255,255,255,0.055);
-    border: 1px solid rgba(255,255,255,0.12);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    border-radius: 22px;
-    z-index: 1000;
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.35),
-        inset 0 1px rgba(255,255,255,0.08);
-}
-
-.nav-logo {
-    height: 42px;
-    width: auto;
-    object-fit: contain;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: rgba(255,255,255,0.72);
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.3s ease;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #ff1727;
-    left: 50%;
-    bottom: -7px;
-    transform: translateX(-50%);
-    transition: 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #ffffff;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 100vh;
-    padding: 160px 7% 100px;
-
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    gap: 60px;
-
-    max-width: 1400px;
-    margin: auto;
-}
-
-.hero-content {
-    animation: heroLeft 1s ease forwards;
-}
-
-@keyframes heroLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.eyebrow {
-    color: #ff1727;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 8vw, 105px);
-    line-height: 0.92;
-    font-weight: 900;
-    letter-spacing: -5px;
-    margin-bottom: 28px;
-}
-
-.hero h1 span {
-    color: #ff1727;
-    text-shadow: 0 0 35px rgba(255,23,39,0.25);
-}
-
-.hero-title {
-    font-size: clamp(22px, 3vw, 34px);
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-
-.hero-subtitle {
-    font-size: 17px;
-    color: rgba(255,255,255,0.65);
-    max-width: 650px;
-    margin-bottom: 35px;
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.btn {
-    padding: 14px 24px;
-    border-radius: 14px;
-    font-weight: 700;
-    transition: 0.35s ease;
-    border: 1px solid rgba(255,255,255,0.15);
-}
-
-.btn-primary {
-    background: #ff1727;
-    box-shadow: 0 12px 35px rgba(255,23,39,0.25);
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 45px rgba(255,23,39,0.4);
-}
-
-.btn-glass {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(15px);
-}
-
-.btn-glass:hover {
-    background: rgba(255,255,255,0.12);
-    transform: translateY(-4px);
-}
-
-/* =========================
-   HERO LOGO CARD
-========================= */
-
-.hero-card {
-    min-height: 450px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.12),
-            rgba(255,255,255,0.025)
-        );
-
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 35px;
-
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.45),
-        inset 0 1px rgba(255,255,255,0.12);
-
-    animation:
-        heroRight 1s ease forwards,
-        floating 5s ease-in-out 1s infinite;
-}
-
-@keyframes heroRight {
-    from {
-        opacity: 0;
-        transform: translateX(60px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes floating {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-.hero-card img {
-    width: min(360px, 85%);
-    filter: drop-shadow(0 20px 35px rgba(255,23,39,0.2));
-}
-
-.hero-card h3 {
-    margin-top: 28px;
-    font-size: 26px;
-}
-
-.hero-card p {
-    color: rgba(255,255,255,0.55);
-    margin-top: 5px;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    padding: 110px 7%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-.section-heading {
-    margin-bottom: 55px;
-}
-
-.section-heading small {
-    color: #ff1727;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 800;
-}
-
-.section-heading h2 {
-    font-size: clamp(38px, 5vw, 65px);
-    line-height: 1;
-    margin-top: 12px;
-}
-
-/* =========================
-   GLASS CARDS
-========================= */
-
-.glass-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.glass-card {
-    padding: 30px;
-
-    background: rgba(255,255,255,0.045);
-    border: 1px solid rgba(255,255,255,0.11);
-    border-radius: 25px;
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        transform 0.4s ease,
-        background 0.4s ease,
-        border-color 0.4s ease;
-
-    box-shadow:
-        inset 0 1px rgba(255,255,255,0.07),
-        0 20px 50px rgba(0,0,0,0.2);
-}
-
-.glass-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255,255,255,0.075);
-    border-color: rgba(255,23,39,0.45);
-}
-
-.card-number {
-    color: #ff1727;
-    font-size: 13px;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.glass-card h3 {
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.glass-card p {
-    color: rgba(255,255,255,0.62);
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.service-icon {
-    width: 55px;
-    height: 55px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 16px;
-    margin-bottom: 22px;
-
-    background: rgba(255,23,39,0.1);
-    border: 1px solid rgba(255,23,39,0.25);
-
-    color: #ff1727;
-    font-size: 24px;
-}
-
-/* =========================
-   SKILLS
-========================= */
-
-.skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.skill {
-    margin-bottom: 25px;
-}
-
-.skill-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.skill-bar {
-    height: 8px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    width: 0;
-    background: linear-gradient(90deg,#ff1727,#ff5965);
-    border-radius: 20px;
-    transition: width 1.5s ease;
-}
-
-/* =========================
-   MH GRAPHICS
-========================= */
-
-.business-card {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 50px;
-    align-items: center;
-
-    padding: 50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.09),
-            rgba(255,255,255,0.025)
-        );
-
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 35px;
-
-    backdrop-filter: blur(25px);
-}
-
-.business-logo {
-    display: flex;
-    justify-content: center;
-}
-
-.business-logo img {
-    width: min(400px,100%);
-    filter: drop-shadow(0 25px 40px rgba(255,23,39,0.15));
-}
-
-.business-content h2 {
-    font-size: clamp(35px,5vw,60px);
-    margin-bottom: 15px;
-}
-
-.business-content p {
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 25px;
-}
-
-.business-services {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tag {
-    padding: 9px 14px;
-    border-radius: 100px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.75);
-    font-size: 13px;
-}
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.timeline {
-    border-left: 1px solid rgba(255,255,255,0.15);
-    padding-left: 30px;
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #ff1727;
-    border-radius: 50%;
-    left: -37px;
-    top: 7px;
-    box-shadow: 0 0 20px rgba(255,23,39,0.6);
-}
-
-.timeline-item span {
-    color: #ff1727;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.timeline-item h3 {
-    font-size: 24px;
-    margin: 5px 0;
-}
-
-.timeline-item p {
-    color: rgba(255,255,255,0.6);
-}
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-box {
-    text-align: center;
-    padding: 70px 30px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,23,39,0.13),
-            transparent 60%
-        ),
-        rgba(255,255,255,0.04);
-
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 35px;
-
-    backdrop-filter: blur(25px);
-}
-
-.contact-box h2 {
-    font-size: clamp(40px,6vw,75px);
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.contact-box p {
-    color: rgba(255,255,255,0.6);
-    max-width: 650px;
-    margin: 0 auto 30px;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: rgba(255,255,255,0.4);
-    border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-footer span {
-    color: #ff1727;
-}
-
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding-top: 150px;
-    }
-
-    .hero h1 {
-        letter-spacing: -3px;
-    }
-
-    .hero-card {
-        min-height: 350px;
-    }
-
-    .glass-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .skills {
-        grid-template-columns: 1fr;
-    }
-
-    .business-card {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-
-    section {
-        padding: 80px 5%;
-    }
-
-    .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .hero h1 {
-        font-size: 55px;
-    }
-
-    .glass-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .business-card {
-        padding: 30px 22px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        text-align: center;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muhammad Huzaifa | Graphic Designer & Accountant</title>
+
+    <meta name="description"
+          content="Muhammad Huzaifa — Graphic Designer, Accountant and Founder of MH Graphics. Creative Design, Financial Precision and Digital Solutions.">
+
+    <meta name="author" content="Muhammad Huzaifa">
+
+    <style>
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================================================
+           LIQUID BACKGROUND
+        ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            background: #ff1e2d;
+            border-radius: 50%;
+            filter: blur(180px);
+            opacity: 0.13;
+            top: -300px;
+            left: -250px;
+            z-index: -5;
+            animation: liquidOne 14s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            background: #ff2737;
+            border-radius: 50%;
+            filter: blur(190px);
+            opacity: 0.10;
+            bottom: -300px;
+            right: -250px;
+            z-index: -5;
+            animation: liquidTwo 17s ease-in-out infinite alternate;
+        }
+
+        @keyframes liquidOne {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(180px, 100px) scale(1.25);
+            }
+
+            100% {
+                transform: translate(50px, 250px) scale(0.9);
+            }
+        }
+
+        @keyframes liquidTwo {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(-150px, -120px) scale(1.2);
+            }
+
+            100% {
+                transform: translate(-50px, -200px) scale(0.9);
+            }
+        }
+
+
+        /* =========================================================
+           FLOATING LIQUID BLOBS
+        ========================================================= */
+
+        .liquid {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -3;
+            filter: blur(2px);
+            opacity: 0.35;
+        }
+
+        .liquid-1 {
+            width: 180px;
+            height: 180px;
+            top: 25%;
+            right: 5%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 30, 45, 0.28),
+                rgba(255, 255, 255, 0.03)
+            );
+            animation: float 9s ease-in-out infinite;
+        }
+
+        .liquid-2 {
+            width: 130px;
+            height: 130px;
+            bottom: 20%;
+            left: 4%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 30, 45, 0.20),
+                rgba(255, 255, 255, 0.02)
+            );
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-35px) rotate(20deg);
+            }
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
+
+        .container {
+            width: min(1180px, 90%);
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           GLASS EFFECT
+        ========================================================= */
+
+        .glass {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        nav {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1200px, 92%);
+            z-index: 1000;
+
+            border-radius: 25px;
+            padding: 12px 20px;
+
+            background: rgba(15, 15, 15, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+            transition: 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.85);
+            border-color: rgba(255, 30, 45, 0.25);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .nav-logo img {
+            height: 46px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #bdbdbd;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: #ff1e2d;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-small {
+            color: #ff2435;
+            letter-spacing: 5px;
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: 0.92;
+            font-weight: 900;
+            letter-spacing: -5px;
+            margin-bottom: 35px;
+            animation: fadeUp 1s ease 0.1s both;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: #ff1e2d;
+        }
+
+        .hero-title {
+            font-size: clamp(25px, 3vw, 38px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            animation: fadeUp 1s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            color: #a9a9a9;
+            font-size: 18px;
+            margin-bottom: 25px;
+            animation: fadeUp 1s ease 0.3s both;
+        }
+
+        .hero-description {
+            color: #999;
+            max-width: 650px;
+            font-size: 17px;
+            margin-bottom: 35px;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: fadeUp 1s ease 0.5s both;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-weight: 700;
+            transition: 0.35s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ff1e2d;
+            color: #fff;
+            box-shadow: 0 12px 35px rgba(255, 30, 45, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(255, 30, 45, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-4px);
+            border-color: #ff1e2d;
+        }
+
+
+        /* =========================================================
+           HERO LOGO CARD
+        ========================================================= */
+
+        .hero-card {
+            min-height: 450px;
+            border-radius: 35px;
+            padding: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: #ff1e2d;
+            filter: blur(100px);
+            opacity: 0.13;
+            top: -80px;
+            right: -80px;
+        }
+
+        .hero-card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .personal-logo {
+            width: 220px;
+            max-height: 180px;
+            object-fit: contain;
+            margin: 0 auto 30px;
+        }
+
+        .hero-card h3 {
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .hero-card p {
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        section {
+            padding: 110px 0;
+            scroll-margin-top: 100px;
+        }
+
+        .section-heading {
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: #ff1e2d;
+            font-size: 13px;
+            letter-spacing: 4px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .section-heading p {
+            color: #888;
+            margin-top: 18px;
+            max-width: 650px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-card {
+            padding: 35px;
+            border-radius: 25px;
+            transition: 0.4s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 30, 45, 0.35);
+        }
+
+        .about-card h3 {
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .about-card p {
+            color: #999;
+        }
+
+        .about-highlight {
+            color: #fff;
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 30px;
+            min-height: 220px;
+            border-radius: 25px;
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 30, 45, 0.4);
+        }
+
+        .service-number {
+            color: #ff1e2d;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #8f8f8f;
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .skills-card {
+            padding: 35px;
+            border-radius: 25px;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 9px;
+        }
+
+        .skill-info span:first-child {
+            font-weight: 700;
+        }
+
+        .skill-info span:last-child {
+            color: #ff1e2d;
+        }
+
+        .skill-bar {
+            height: 7px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(
+                90deg,
+                #ff1e2d,
+                #ff6670
+            );
+            border-radius: 20px;
+            transition: width 1.5s ease;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience-card {
+            padding: 40px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: #ff1e2d;
+            left: 0;
+            top: 0;
+        }
+
+        .experience-date {
+            color: #ff1e2d;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .experience-card h3 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .experience-card p {
+            color: #999;
+            max-width: 850px;
+        }
+
+
+        /* =========================================================
+           MH GRAPHICS
+        ========================================================= */
+
+        .mh-section {
+            position: relative;
+        }
+
+        .mh-card {
+            padding: 55px;
+            border-radius: 35px;
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+            gap: 60px;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mh-card::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #ff1e2d;
+            filter: blur(130px);
+            opacity: 0.09;
+            left: -120px;
+            bottom: -150px;
+        }
+
+        .mh-logo-box {
+            min-height: 300px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 35px;
+        }
+
+        .mh-logo {
+            width: 240px;
+            max-height: 220px;
+            object-fit: contain;
+        }
+
+        .mh-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mh-content h3 {
+            font-size: clamp(35px, 5vw, 60px);
+            margin-bottom: 15px;
+        }
+
+        .mh-content > p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .mh-services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .mh-service {
+            padding: 14px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        .mh-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .social-btn {
+            padding: 11px 17px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: 0.3s ease;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .social-btn:hover {
+            background: #ff1e2d;
+            border-color: #ff1e2d;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-card {
+            padding: 40px;
+            border-radius: 30px;
+        }
+
+        .contact-card h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card > p {
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            padding: 17px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,30,45,0.12);
+            color: #ff1e2d;
+            font-weight: 800;
+        }
+
+        .contact-item small {
+            display: block;
+            color: #777;
+            margin-bottom: 3px;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            color: #ddd;
+            word-break: break-word;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-brand img {
+            height: 45px;
+            width: auto;
+        }
+
+        .footer-brand p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #888;
+            font-size: 13px;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ff1e2d;
+        }
+
+        .copyright {
+            margin-top: 35px;
+            text-align: center;
+            color: #555;
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(45px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           GENERAL ANIMATION
+        ========================================================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 950px) {
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .skills-grid,
+            .contact-grid,
+            .mh-card {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .hero-card {
+                min-height: 380px;
+            }
+
+            .mh-card {
+                gap: 35px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav {
+                width: 94%;
+                padding: 10px 14px;
+            }
+
+            .nav-logo img {
+                height: 38px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .hero-title {
+                font-size: 27px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                padding: 30px;
+            }
+
+            .mh-card {
+                padding: 25px;
+            }
+
+            .mh-services {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card,
+            .about-card,
+            .skills-card,
+            .experience-card {
+                padding: 25px;
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav class="navbar">
-
-    <a href="#home">
-        <img
-            src="huzaifa-logo.png"
-            alt="Huzaifa Logo"
-            class="nav-logo"
-        >
-    </a>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#mhgraphics">MH Graphics</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-</nav>
+    <!-- Floating liquid elements -->
+    <div class="liquid liquid-1"></div>
+    <div class="liquid liquid-2"></div>
 
 
-<!-- =========================
-     HERO
-========================= -->
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-<header class="hero" id="home">
+    <nav id="navbar">
 
-    <div class="hero-content">
+        <div class="nav-inner">
 
-        <div class="eyebrow">
-            Welcome to my portfolio
-        </div>
+            <a href="#home" class="nav-logo">
 
-        <h1>
-            MUHAMMAD<br>
-            <span>HUZAIFA</span>
-        </h1>
+                <!-- PERSONAL LOGO -->
+                <img src="./huzaifa-logo.png"
+                     alt="Muhammad Huzaifa Logo">
 
-        <div class="hero-title">
-            Graphic Designer & Accountant
-        </div>
-
-        <p class="hero-subtitle">
-            Creative Design • Financial Precision • Digital Solutions
-            <br><br>
-            I combine creativity, technology, business knowledge,
-            and accounting & finance to create practical professional solutions.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#contact" class="btn btn-primary">
-                Let's Work Together
             </a>
 
-            <a href="#services" class="btn btn-glass">
-                Explore My Work
-            </a>
 
-        </div>
-
-    </div>
-
-
-    <div class="hero-card">
-
-        <img
-            src="huzaifa-logo.png"
-            alt="Muhammad Huzaifa Logo"
-        >
-
-        <h3>Muhammad Huzaifa</h3>
-
-        <p>
-            Graphic Designer • Accountant
-        </p>
-
-        <p>
-            Founder — MH Graphics
-        </p>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about" class="reveal">
-
-    <div class="section-heading">
-
-        <small>01 — About Me</small>
-
-        <h2>
-            Creativity meets<br>
-            financial precision.
-        </h2>
-
-    </div>
-
-    <div class="glass-card">
-
-        <p>
-            I'm Huzaifa, a passionate Graphic Designer and Accounting &
-            Finance student with a unique combination of creative and
-            analytical skills.
-        </p>
-
-        <br>
-
-        <p>
-            I enjoy working at the intersection of design, technology,
-            business, and finance, where creativity meets practical
-            problem-solving.
-        </p>
-
-        <br>
-
-        <p>
-            Alongside my creative career, I am pursuing a BS in Accounting
-            & Finance, developing my knowledge of accounting, financial
-            management, analysis, reporting, and business concepts.
-        </p>
-
-        <br>
-
-        <p>
-            I am also the Founder of MH Graphics, a creative and digital
-            services brand providing graphic design, website development,
-            video editing, and accounting services.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section id="services" class="reveal">
-
-    <div class="section-heading">
-
-        <small>02 — Services</small>
-
-        <h2>
-            What I do.
-        </h2>
-
-    </div>
-
-
-    <div class="glass-grid">
-
-        <div class="glass-card">
-
-            <div class="service-icon">✦</div>
-
-            <div class="card-number">01</div>
-
-            <h3>Graphic Design</h3>
-
-            <p>
-                Social media designs, branding, logos, posters,
-                flyers, presentations, advertisements and digital
-                marketing graphics.
-            </p>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <div class="service-icon">⌘</div>
-
-            <div class="card-number">02</div>
-
-            <h3>Website Development</h3>
-
-            <p>
-                Portfolio websites, business websites, landing pages,
-                responsive designs and GitHub Pages websites.
-            </p>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <div class="service-icon">▶</div>
-
-            <div class="card-number">03</div>
-
-            <h3>Video Editing</h3>
-
-            <p>
-                Social media reels, promotional videos, business
-                videos, short-form content, transitions and visual effects.
-            </p>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <div class="service-icon">₨</div>
-
-            <div class="card-number">04</div>
-
-            <h3>Accounting Services</h3>
-
-            <p>
-                Bookkeeping, financial records, accounts preparation,
-                financial statements, Excel reporting and analysis.
-            </p>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <div class="service-icon">◎</div>
-
-            <div class="card-number">05</div>
-
-            <h3>Financial Analysis</h3>
-
-            <p>
-                Ratio analysis, cost accounting, management accounting,
-                budgeting and financial reporting.
-            </p>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <div class="service-icon">◆</div>
-
-            <div class="card-number">06</div>
-
-            <h3>Digital Solutions</h3>
-
-            <p>
-                Creative and practical digital solutions designed to
-                improve professional presence and business communication.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section id="skills" class="reveal">
-
-    <div class="section-heading">
-
-        <small>03 — Skills</small>
-
-        <h2>
-            Creative + analytical.
-        </h2>
-
-    </div>
-
-
-    <div class="skills">
-
-        <div class="glass-card">
-
-            <h3>Graphic Design</h3>
-
-            <br>
-
-            <div class="skill">
-                <div class="skill-header">
-                    <span>Social Media Design</span>
-                    <span>95%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="95%"></div>
-                </div>
-            </div>
-
-
-            <div class="skill">
-                <div class="skill-header">
-                    <span>Branding & Visual Identity</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
-            </div>
-
-
-            <div class="skill">
-                <div class="skill-header">
-                    <span>Marketing Design</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
-            </div>
-
-
-            <div class="skill">
-                <div class="skill-header">
-                    <span>Typography & Layout</span>
-                    <span>88%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="88%"></div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="glass-card">
-
-            <h3>Accounting & Finance</h3>
-
-            <br>
-
-            <div class="skill">
-
-                <div class="skill-header">
-                    <span>Bookkeeping</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-header">
-                    <span>Financial Reporting</span>
-                    <span>88%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="88%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-header">
-                    <span>Financial Analysis</span>
-                    <span>85%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="85%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill">
-
-                <div class="skill-header">
-                    <span>Microsoft Excel</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-progress" data-width="90%"></div>
-                </div>
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#mhgraphics">MH Graphics</a>
+                <a href="#contact">Contact</a>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </nav>
 
 
-<!-- =========================
-     EXPERIENCE
-========================= -->
 
-<section id="experience" class="reveal">
+    <!-- =========================================================
+         HOME
+    ========================================================== -->
 
-    <div class="section-heading">
+    <main>
 
-        <small>04 — Experience & Education</small>
+        <section class="hero" id="home">
 
-        <h2>
-            My journey.
-        </h2>
+            <div class="container">
 
-    </div>
+                <div class="hero-grid">
 
+                    <div>
 
-    <div class="timeline">
+                        <div class="hero-small">
+                            WELCOME TO MY PORTFOLIO
+                        </div>
 
-        <div class="timeline-item">
+                        <h1>
+                            MUHAMMAD
+                            <span>HUZAIFA</span>
+                        </h1>
 
-            <span>Current</span>
+                        <div class="hero-title">
+                            Graphic Designer & Accountant
+                        </div>
 
-            <h3>BS Accounting & Finance</h3>
+                        <div class="hero-subtitle">
+                            Creative Design • Financial Precision • Digital Solutions
+                        </div>
 
-            <p>
-                Currently developing professional knowledge in accounting,
-                finance, financial reporting, analysis and business.
-            </p>
+                        <p class="hero-description">
+                            I combine creativity, technology, business knowledge,
+                            and accounting & finance to create practical
+                            professional solutions.
+                        </p>
 
-        </div>
+                        <div class="hero-buttons">
 
+                            <a href="#contact"
+                               class="btn btn-primary">
+                                Let's Work Together
+                            </a>
 
-        <div class="timeline-item">
+                            <a href="#services"
+                               class="btn btn-secondary">
+                                Explore My Work
+                            </a>
 
-            <span>Professional Experience</span>
+                        </div>
 
-            <h3>Graphic Designer</h3>
-
-            <p>
-                Creating professional visual content, social media
-                designs, marketing materials and digital content.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>Business</span>
-
-            <h3>Founder — MH Graphics</h3>
-
-            <p>
-                Building a creative and digital services brand providing
-                design, website development, video editing and accounting
-                services.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+                    </div>
 
 
-<!-- =========================
-     MH GRAPHICS
-========================= -->
+                    <!-- PERSONAL LOGO CARD -->
 
-<section id="mhgraphics" class="reveal">
+                    <div class="hero-card glass">
 
-    <div class="section-heading">
+                        <div class="hero-card-content">
 
-        <small>05 — Business</small>
+                            <img
+                                src="./huzaifa-logo.png"
+                                alt="Muhammad Huzaifa Logo"
+                                class="personal-logo"
+                            >
 
-        <h2>
-            MH Graphics.
-        </h2>
+                            <h3>
+                                Muhammad Huzaifa
+                            </h3>
 
-    </div>
+                            <p>
+                                Graphic Designer • Accountant
+                            </p>
 
+                            <p>
+                                Founder — MH Graphics
+                            </p>
 
-    <div class="business-card">
+                        </div>
 
-        <div class="business-logo">
+                    </div>
 
-            <img
-                src="mh-graphics-logo.png"
-                alt="MH Graphics Logo"
-            >
+                </div>
 
-        </div>
+            </div>
 
-
-        <div class="business-content">
-
-            <h2>
-                Grow Your Business<br>
-                <span style="color:#ff1727;">With Us.</span>
-            </h2>
-
-            <p>
-                MH Graphics is a creative and digital services brand
-                focused on helping individuals and businesses establish
-                a professional digital presence.
-            </p>
+        </section>
 
 
-            <div class="business-services">
 
-                <span class="tag">Graphic Design</span>
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
 
-                <span class="tag">Website Development</span>
+        <section id="about">
 
-                <span class="tag">Video Editing</span>
+            <div class="container">
 
-                <span class="tag">Accounting Services</span>
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        ABOUT ME
+                    </div>
+
+                    <h2>
+                        Creativity meets<br>
+                        financial precision.
+                    </h2>
+
+                    <p>
+                        A combination of creative design, accounting knowledge,
+                        technology and business understanding.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-card glass reveal">
+
+                        <h3>
+                            Who I Am
+                        </h3>
+
+                        <p>
+                            I am <span class="about-highlight">
+                            Muhammad Huzaifa</span>, a Graphic Designer
+                            and Accounting & Finance student with an interest
+                            in digital solutions, business and creative work.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-card glass reveal">
+
+                        <h3>
+                            My Approach
+                        </h3>
+
+                        <p>
+                            I believe professional work should combine
+                            creativity with accuracy. Whether it is a design,
+                            website, financial task or business solution,
+                            my goal is to create work that is practical,
+                            clear and professional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section id="services">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        WHAT I DO
+                    </div>
+
+                    <h2>
+                        My Services
+                    </h2>
+
+                    <p>
+                        Creative, digital and financial solutions designed
+                        for individuals and businesses.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+                    <div class="service-card glass reveal">
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Graphic Design
+                        </h3>
+
+                        <p>
+                            Social media designs, branding, marketing
+                            graphics and professional visual content.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card glass reveal">
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Website Development
+                        </h3>
+
+                        <p>
+                            Modern, responsive and professional websites
+                            for personal brands and businesses.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card glass reveal">
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Video Editing
+                        </h3>
+
+                        <p>
+                            Engaging promotional videos, social media
+                            content and professional video editing.
+                        </p>
+
+                    </div>
+
+
+                    <div class="service-card glass reveal">
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Accounting Services
+                        </h3>
+
+                        <p>
+                            Accounting, financial records, reports and
+                            practical business finance support.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        MY SKILLS
+                    </div>
+
+                    <h2>
+                        What I Bring
+                    </h2>
+
+                    <p>
+                        A combination of creative, technical and financial
+                        skills.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skills-card glass reveal">
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Graphic Design</span>
+                                <span>90%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="90%"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Accounting</span>
+                                <span>85%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="85%"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Branding</span>
+                                <span>85%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="85%"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skills-card glass reveal">
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Web Development</span>
+                                <span>80%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="80%"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Video Editing</span>
+                                <span>80%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="80%"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="skill">
+
+                            <div class="skill-info">
+                                <span>Microsoft Office</span>
+                                <span>90%</span>
+                            </div>
+
+                            <div class="skill-bar">
+                                <div class="skill-fill"
+                                     data-width="90%"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section id="experience">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        EXPERIENCE
+                    </div>
+
+                    <h2>
+                        Professional Journey
+                    </h2>
+
+                </div>
+
+
+                <div class="experience-card glass reveal">
+
+                    <div class="experience-date">
+                        CURRENT
+                    </div>
+
+                    <h3>
+                        Graphic Designer & Accountant
+                    </h3>
+
+                    <div class="experience-company">
+                        SOL-UP TECHNOLOGIES
+                    </div>
+
+                    <p>
+                        Working across creative design and accounting
+                        responsibilities, combining visual communication
+                        with financial and business knowledge.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MH GRAPHICS
+        ====================================================== -->
+
+        <section id="mhgraphics" class="mh-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        MY BUSINESS
+                    </div>
+
+                    <h2>
+                        MH Graphics
+                    </h2>
+
+                    <p>
+                        Creative and digital solutions for modern businesses.
+                    </p>
+
+                </div>
+
+
+                <div class="mh-card glass reveal">
+
+                    <!-- MH GRAPHICS LOGO -->
+
+                    <div class="mh-logo-box">
+
+                        <img
+                            src="./mh-graphics-logo.png"
+                            alt="MH Graphics Logo"
+                            class="mh-logo"
+                        >
+
+                    </div>
+
+
+                    <div class="mh-content">
+
+                        <h3>
+                            MH Graphics
+                        </h3>
+
+                        <p>
+                            A creative digital service brand providing
+                            professional solutions for businesses,
+                            entrepreneurs and individuals.
+                        </p>
+
+
+                        <div class="mh-services">
+
+                            <div class="mh-service">
+                                Graphic Design
+                            </div>
+
+                            <div class="mh-service">
+                                Website Development
+                            </div>
+
+                            <div class="mh-service">
+                                Video Editing
+                            </div>
+
+                            <div class="mh-service">
+                                Accounting Services
+                            </div>
+
+                        </div>
+
+
+                        <div class="mh-links">
+
+                            <!-- MH GRAPHICS WHATSAPP -->
+
+                            <a
+                                href="https://wa.me/923375629131"
+                                target="_blank"
+                                class="social-btn"
+                            >
+                                WhatsApp
+                            </a>
+
+
+                            <!-- MH GRAPHICS WHATSAPP CHANNEL -->
+
+                            <a
+                                href="https://whatsapp.com/channel/0029Vb69g4YA2pLCGyoKvx39"
+                                target="_blank"
+                                class="social-btn"
+                            >
+                                WhatsApp Channel
+                            </a>
+
+
+                            <!-- MH GRAPHICS LINKEDIN -->
+
+                            <a
+                                href="https://www.linkedin.com/company/145050976"
+                                target="_blank"
+                                class="social-btn"
+                            >
+                                LinkedIn
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="section-label">
+                        GET IN TOUCH
+                    </div>
+
+                    <h2>
+                        Let's create<br>
+                        something great.
+                    </h2>
+
+                    <p>
+                        Have a project, business requirement or creative idea?
+                        Let's connect.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <!-- PERSONAL CONTACT -->
+
+                    <div class="contact-card glass reveal">
+
+                        <h3>
+                            Muhammad Huzaifa
+                        </h3>
+
+                        <p>
+                            Personal contact & professional networking.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                @
+                            </div>
+
+                            <div>
+
+                                <small>Email</small>
+
+                                <a href="mailto:mhmdhuzaifa06@gmail.com">
+                                    mhmdhuzaifa06@gmail.com
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                W
+                            </div>
+
+                            <div>
+
+                                <small>WhatsApp</small>
+
+                                <a
+                                    href="https://wa.me/923195272672"
+                                    target="_blank"
+                                >
+                                    WhatsApp Me
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                in
+                            </div>
+
+                            <div>
+
+                                <small>LinkedIn</small>
+
+                                <a
+                                    href="https://www.linkedin.com/in/muhammad-huzaifa-970059370"
+                                    target="_blank"
+                                >
+                                    Muhammad Huzaifa
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                f
+                            </div>
+
+                            <div>
+
+                                <small>Facebook</small>
+
+                                <a
+                                    href="https://web.facebook.com/profile.php?id=61555700462258"
+                                    target="_blank"
+                                >
+                                    Facebook Profile
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MH GRAPHICS CONTACT -->
+
+                    <div class="contact-card glass reveal">
+
+                        <h3>
+                            MH Graphics
+                        </h3>
+
+                        <p>
+                            Professional creative and digital services.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                W
+                            </div>
+
+                            <div>
+
+                                <small>WhatsApp</small>
+
+                                <a
+                                    href="https://wa.me/923375629131"
+                                    target="_blank"
+                                >
+                                    0337-5629131
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                in
+                            </div>
+
+                            <div>
+
+                                <small>LinkedIn</small>
+
+                                <a
+                                    href="https://www.linkedin.com/company/145050976"
+                                    target="_blank"
+                                >
+                                    MH Graphics
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                W
+                            </div>
+
+                            <div>
+
+                                <small>WhatsApp Channel</small>
+
+                                <a
+                                    href="https://whatsapp.com/channel/0029Vb69g4YA2pLCGyoKvx39"
+                                    target="_blank"
+                                >
+                                    Follow MH Graphics
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                ✦
+                            </div>
+
+                            <div>
+
+                                <small>Services</small>
+
+                                <span>
+                                    Graphic Design • Website Development •
+                                    Video Editing • Accounting Services
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-inner">
+
+
+                <div class="footer-brand">
+
+                    <img
+                        src="./huzaifa-logo.png"
+                        alt="Muhammad Huzaifa Logo"
+                    >
+
+                    <div>
+
+                        <strong>
+                            Muhammad Huzaifa
+                        </strong>
+
+                        <p>
+                            Graphic Designer & Accountant
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#mhgraphics">MH Graphics</a>
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 Muhammad Huzaifa. All Rights Reserved.
+                <br>
+                MH Graphics
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </footer>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
 
-<section id="contact" class="reveal">
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
 
-    <div class="contact-box">
+    <script>
 
-        <h2>
-            Let's create<br>
-            something great.
-        </h2>
+        /* =========================================================
+           NAVBAR SCROLL EFFECT
+        ========================================================== */
 
-        <p>
-            Have a project, business idea, design requirement or
-            accounting need? Let's discuss how I can help.
-        </p>
+        const navbar = document.getElementById("navbar");
 
+        window.addEventListener("scroll", () => {
 
-        <div class="contact-links">
-
-            <a
-                href="https://wa.me/923375629131"
-                class="btn btn-primary"
-                target="_blank"
-            >
-                WhatsApp
-            </a>
-
-            <a
-                href="mailto:your-email@example.com"
-                class="btn btn-glass"
-            >
-                Email Me
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        © 2026 Muhammad Huzaifa.
-        All Rights Reserved.
-    </p>
-
-    <p>
-        Creative Design <span>•</span>
-        Financial Precision <span>•</span>
-        Digital Solutions
-    </p>
-
-</footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-const revealObserver =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("active");
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-revealElements.forEach((element) => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================
-   SKILL BAR ANIMATION
-========================= */
-
-const skillBars =
-    document.querySelectorAll(".skill-progress");
-
-const skillObserver =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    const width =
-                        entry.target.getAttribute("data-width");
-
-                    entry.target.style.width = width;
-
-                }
-
-            });
-
-        },
-        {
-            threshold: 0.5
-        }
-    );
-
-
-skillBars.forEach((bar) => {
-
-    skillObserver.observe(bar);
-
-});
-
-
-/* =========================
-   NAVBAR ACTIVE EFFECT
-========================= */
-
-const navLinks =
-    document.querySelectorAll(".nav-links a");
-
-navLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.forEach((item) => {
-
-            item.style.color =
-                "rgba(255,255,255,0.72)";
+            if (window.scrollY > 40) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
 
         });
 
-        link.style.color = "#ffffff";
 
-    });
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================== */
 
-});
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-</script>
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach((element) => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =========================================================
+           ANIMATED SKILL BARS
+        ========================================================== */
+
+        const skillBars =
+            document.querySelectorAll(".skill-fill");
+
+        const skillObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            const width =
+                                entry.target.getAttribute("data-width");
+
+                            entry.target.style.width = width;
+
+                            skillObserver.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.5
+                }
+
+            );
+
+
+        skillBars.forEach((bar) => {
+
+            skillObserver.observe(bar);
+
+        });
+
+
+        /* =========================================================
+           ACTIVE NAVIGATION
+        ========================================================== */
+
+        const sections =
+            document.querySelectorAll("section");
+
+        const navItems =
+            document.querySelectorAll(".nav-links a");
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach((section) => {
+
+                const sectionTop =
+                    section.offsetTop - 160;
+
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+
+            });
+
+            navItems.forEach((link) => {
+
+                link.style.color = "#bdbdbd";
+
+                if (
+                    link.getAttribute("href") === "#" + current
+                ) {
+
+                    link.style.color = "#ffffff";
+
+                }
+
+            });
+
+        });
+
+
+        /* =========================================================
+           MOUSE LIQUID MOVEMENT
+        ========================================================== */
+
+        document.addEventListener("mousemove", (event) => {
+
+            const x =
+                (event.clientX / window.innerWidth - 0.5) * 25;
+
+            const y =
+                (event.clientY / window.innerHeight - 0.5) * 25;
+
+            document.querySelector(".liquid-1").style.transform =
+                `translate(${x}px, ${y}px)`;
+
+            document.querySelector(".liquid-2").style.transform =
+                `translate(${-x}px, ${-y}px)`;
+
+        });
+
+    </script>
 
 </body>
 </html>
